@@ -8,6 +8,7 @@ public class PalindromeCheckerApp {
         welcomemessage();
         hardinput();
         stringReverse();
+            stringChar();
     }
 
     public static void welcomemessage() {
@@ -43,5 +44,28 @@ public class PalindromeCheckerApp {
         }
 
         System.out.println("Is it a palindrome ?" + result);
+    }
+    public static void stringChar(){
+        String input = "radar";
+        char[] chars = input.toCharArray();
+        int start = 0;
+        int end = chars.length-1;
+        boolean isPalindrome = true;
+        while (start<end){
+            if (chars[start] == chars[end]){
+                end -=1;
+                start +=1;
+           }
+           else {
+                isPalindrome = false;          // Update boolean if mismatch
+                break;
+            }
+        }
+        System.out.println("Input: " + input);
+        if (isPalindrome) {
+            System.out.println("Is it a Palindrome ?: True");
+        } else {
+            System.out.println("Not a palindrome");
+        }
     }
 }
