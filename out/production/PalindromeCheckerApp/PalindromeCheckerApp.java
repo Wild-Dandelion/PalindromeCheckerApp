@@ -7,6 +7,7 @@ public class PalindromeCheckerApp {
     public static void main(String[] args) {
         welcomemessage();
         hardinput();
+        stringReverse();
     }
 
     public static void welcomemessage() {
@@ -29,5 +30,18 @@ public class PalindromeCheckerApp {
         System.out.println("Is it a palindrome? " + result);
     }
 
+    public static void stringReverse(){
+        String input = "madam";
+        String newString = "";
+        boolean result = false;
+        for (int i = input.length()-1; i >= 0 ; i-- ){
+            newString += input.charAt(i);
+        }
 
+        if (input.equals(newString)){
+            result = true;
+        }
+
+        System.out.println("Is it a palindrome ?" + result);
+    }
 }
