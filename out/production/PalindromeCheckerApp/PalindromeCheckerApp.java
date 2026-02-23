@@ -3,6 +3,8 @@
 // (powered by Fernflower decompiler)
 //
 
+//@version 2
+ 
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         welcomemessage();
