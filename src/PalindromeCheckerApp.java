@@ -1,25 +1,31 @@
-public class PalindromeCheckerApp{
-    public static void main(String[] args){
-        welcomemessage();
-        hardinput();
-    }
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-    public static void welcomemessage(){
-        System.out.println("Welcome to Palindrome Checker Management System :D");
-        System.out.println("Version : 1.0");
-        System.out.println("System initialized successfully. \n");
-    }
+public class PalindromeCheckerApp {
+    public static void main(String[] args) {
+        String input = "refer";
+        Deque<Character> deque = new ArrayDeque<>();
 
-    public static void hardinput(){
-        String input = "madam";
-        boolean result = false;
+        for (char c : input.toCharArray()) {
+            deque.addLast(c);
+        }
 
-        for (int i = 0; i < input.length()/2; i++){
-            if (input.charAt(i) == input.charAt(input.length()-1-i)){
-                result = true;
+        boolean isPalindrome = true;
+
+        while (deque.size() > 1) {
+            char first = deque.removeFirst();
+            char last = deque.removeLast();
+
+            if (first != last) {
+                isPalindrome = false;
+                break;
             }
         }
-        System.out.println("Input text: madam");
-        System.out.println("Is it a palindrome? " + result);
+
+        if (isPalindrome) {
+            System.out.println(input + " is a palindrome.");
+        } else {
+            System.out.println(input + " is not a palindrome.");
+        }
     }
 }
